@@ -1,0 +1,79 @@
+.s-defaultSection {
+	&__head {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		margin-bottom: 15px;
+		&__title {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-start;
+			i {
+				@include flexWidth(40px);
+				@include flexHeight(40px);
+				@include roundedAll(50%);
+				@include preset__cardBoxShadow;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				background: $white;
+				svg {
+					display: block;
+					width: 20px;
+					height: 20px;
+					path {
+						fill: $primary;
+					}
+				}
+			}
+			span {
+				display: block;
+				padding-left: 8px;
+				font-weight: $fwSemiBold;
+				color: $primary;
+				font-size: 30px;
+			}
+		}
+		&__readMore {
+			padding-left: 15px;
+		}
+	}
+	&__content {
+		display: block;
+		width: 100%;
+	}
+
+	&.--ads {
+		padding: 20px 0;
+	}
+
+	&.--article {
+		.c-plainText {
+			margin-bottom: 50px;
+			padding-bottom: 40px;
+			border-bottom: 1px solid $gray;
+		}
+	}
+
+	&.--institucional {
+		> * {
+			margin-bottom: 30px;
+			padding-bottom: 30px;
+			border-bottom: 1px solid $gray;
+			&:last-child {
+				border-bottom: 0;
+				padding-bottom: 0;
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+@media screen and (max-width: 780px) {
+	.s-defaultSection__head__title span {
+		font-size: 22px;
+	}
+}

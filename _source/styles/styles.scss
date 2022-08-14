@@ -1,0 +1,50 @@
+// theme
+@import "_partials/theme";
+
+// utilities
+@import "_partials/mixins";
+@import "_partials/animations";
+@import "_partials/reset";
+@import "_partials/presets";
+@import "_partials/utilities";
+@import "_partials/crossBrowser";
+@import "_partials/librariesEdits";
+
+// components
+@import "components/c404";
+@import "components/cResponsiveGrid";
+@import "components/cHamburguer";
+@import "components/cBrand";
+@import "components/cSearch";
+@import "components/cMenu__social";
+@import "components/cSmartMenu";
+@import "components/cAdsBanner";
+@import "components/cArticleInfos";
+@import "components/cReadMore";
+@import "components/cCardArticle";
+@import "components/cCardKarina";
+@import "components/cTab";
+@import "components/cVideo";
+@import "components/cPagination";
+@import "components/cCardColumnist";
+@import "components/cOrderedListPosts";
+@import "components/cForm";
+@import "components/cFormFeedback";
+//@import "components/cFormContact";
+@import "components/cBtn";
+@import "components/cNewsletterWpp";
+@import "components/cPlainText";
+@import "components/cShareOptions";
+
+// sections
+@import "sections/sDefaultSection";
+@import "sections/sNdtvPanel";
+//@import "sections/sFullPost";
+
+// layouts
+@import "layout/lPage";
+@import "layout/lNav";
+@import "layout/lHeader";
+@import "layout/lHeaderArticle";
+@import "layout/lSidebar";
+@import "layout/lFooter";

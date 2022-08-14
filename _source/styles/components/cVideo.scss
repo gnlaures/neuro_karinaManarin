@@ -1,0 +1,98 @@
+$cVideoIconSize: 80px;
+$cVideoIconPosition: $cVideoIconSize * 0.5;
+
+.c-video {
+	@include roundedAll();
+	@include transition();
+	display: block;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	&__cover {
+		position: relative;
+		z-index: 1;
+		figure {
+			@include roundedAll();
+			overflow: hidden;
+			z-index: 1;
+			position: relative;
+			z-index: 1;
+			img {
+				@include transition();
+			}
+		}
+		i {
+			@include transition();
+			@include roundedAll(50%);
+			@include preset__cardBoxShadow;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: 3;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			width: $cVideoIconSize;
+			height: $cVideoIconSize;
+			margin-top: - $cVideoIconPosition;
+			margin-left: - $cVideoIconPosition;
+			background: $white;
+			img, svg {
+				@include transition();
+				display: block;
+				width: $cVideoIconPosition;
+				height: $cVideoIconPosition;
+				object-fit: contain;
+			}
+			svg path,
+			svg circle {
+				stroke-width: 1;
+			}
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 2;
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(360deg, rgba(0, 0, 0, 0.6) 13.7%, rgba(0, 0, 0, 0) 38.63%);
+		}
+	}
+	&__infos {
+		display: block;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		padding: 20px;
+		z-index: 2;
+	}
+
+	&:hover {
+		figure {
+			img {
+				@include scale(1.05, center);
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.c-video__cover {
+		i {
+			width: $cVideoIconSize * 0.5;
+			height: $cVideoIconSize * 0.5;
+			margin-top: - $cVideoIconPosition * 0.5;
+			margin-left: - $cVideoIconPosition * 0.5;
+			img, svg {
+				width: $cVideoIconSize * 0.25;
+				height: $cVideoIconSize * 0.25;
+			}
+		}
+	}
+}

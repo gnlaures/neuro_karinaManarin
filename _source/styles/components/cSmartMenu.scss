@@ -1,0 +1,537 @@
+// menu com sub menus
+$c_smartMenu_defaultPaddingLeft: 15px;
+.c-smartMenu {
+    display: block;
+    position: relative;
+    z-index: 5;
+    width: 100%;
+
+    // main itens
+    > ul {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        > li {
+            display: block;
+            position: relative;
+            margin-right: 25px;
+            > a {
+                display: block;
+                height: 30px;
+                line-height: 30px;
+                white-space: nowrap;
+                font-size: 14px;
+                font-weight: $fwRegular;
+                position: relative;
+                &:after {
+                    @include transition();
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: 3px;
+                    position: absolute;
+                    left: 0;
+                    bottom: -12px;
+                    background: transparent;
+                }
+            }
+            > a.js-smartMenu__toggle {
+                padding-right: 18px;
+                &:before {
+                    content: '';
+                    @include transition();
+                    display: block;
+                    width: 12px;
+                    height: 12px;
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    margin-top: -6px;
+                    background: white;
+                }
+            }
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+            &:hover {
+                > a.js-smartMenu__toggle {
+                    &:before {
+                        @include rotate(180deg, center);
+                    }
+                }
+            }
+        }
+    }
+
+    // all sub itens
+    > ul {
+        > li {
+            ul {
+                display: none;
+                li {
+                    display: block;
+                }
+                a {
+                    @include transition();
+                    display: block;
+                    padding: 10px $c_smartMenu_defaultPaddingLeft;
+                    font-size: 14px;
+                    &.js-smartMenu__toggle {
+                        font-weight: $fwRegular;
+                        position: relative;
+                        padding-right: 30px;
+                        &:before {
+                            @include transition();
+                            content: '';
+                            display: block;
+                            width: 10px;
+                            height: 10px;
+                            position: absolute;
+                            top: 50%;
+                            right: 15px;
+                            margin-top: -6px;
+                            background: red;
+                        }
+                    }
+                    &.is-active {
+                        &:before {
+                            @include rotate(180deg, center);
+                        }
+                    }
+                }
+                &.is-active {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    // first sub menu
+    > ul {
+        > li {
+            > ul {
+                @include transition();
+                @include roundedAll();
+                //display: block;
+                overflow-y: auto;
+                max-height: 60vh;
+                width: 220px;
+                position: absolute;
+                left: -50%;
+                top: 100%;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+        }
+    }
+
+    // --onlyClick
+    &.--click {
+        > ul {
+            > li {
+                > a {
+                    &.js-smartMenu__toggle {
+                        &:before {
+                            @include rotate(0, center);
+                        }
+                        &.is-active {
+                            &:before {
+                                @include rotate(180deg, center);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // themes
+    &.--white {
+        // main itens
+        > ul {
+            > li {
+                > a {
+                    color: $white;
+                    &.js-smartMenu__toggle {
+                        &:before {
+                            background: url(#{$media_icons}icon_caret_down_white.svg);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: contain;
+                        }
+                    }
+                }
+            }
+        }
+        // first sub menu
+        > ul {
+            > li {
+                > ul {
+                    @include scroll($bg: $white2, $bar: $gray, $size: 6px);
+                    background: $white;
+                }
+            }
+        }
+        // all sub itens
+        > ul {
+            > li {
+                ul {
+                    a {
+                        color: $text;
+                        &.js-smartMenu__toggle {
+                            &:before {
+                                background: url(#{$media_icons}icon_caret_down.svg);
+                                background-repeat: no-repeat;
+                                background-position: center;
+                                background-size: contain;
+                            }
+                        }
+                        &:hover {
+                            background: $white3;
+                        }
+                    }
+                }
+            }
+        }
+        // bg colors
+        > ul {
+            > li {
+                > ul {
+                    > li {
+                        > ul {
+                            background: $white2;
+                            > li {
+                                > a {
+                                    padding-left: $c_smartMenu_defaultPaddingLeft + 10px;
+                                }
+                                > ul {
+                                    background: $white3;
+                                    > li {
+                                        > a {
+                                            padding-left: $c_smartMenu_defaultPaddingLeft + 15px;
+                                        }
+                                        > ul {
+                                            background: $gray;
+                                            > li {
+                                                > a {
+                                                    padding-left: $c_smartMenu_defaultPaddingLeft + 20px;
+                                                }
+                                                > ul {
+                                                    background: $gray2;
+                                                    > li {
+                                                        > a {
+                                                            padding-left: $c_smartMenu_defaultPaddingLeft + 25px;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.--secondary {
+        // main itens
+        > ul {
+            > li {
+                > a {
+                    color: $secondary;
+                    &:hover {
+                        &:after {
+                            background: $secondary;
+                        }
+                    }
+                    &.js-smartMenu__toggle {
+                        position: relative;
+                        &:before {
+                            background: url(#{$media_icons}icon_caret_down.svg);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: contain;
+                        }
+                    }
+                }
+            }
+        }
+        // sub itens
+        > ul {
+            > li {
+                ul {
+                    @include scroll($bg: $secondary, $bar: $primary, $size: 6px);
+                    background: $secondary;
+                    a {
+                        color: $white;
+                        font-weight: $fwRegular;
+                        &.js-smartMenu__toggle {
+                            &:before {
+                                background: url(#{$media_icons}icon_caret_down_white.svg);
+                                background-repeat: no-repeat;
+                                background-position: center;
+                                background-size: contain;
+                            }
+                        }
+                        &:hover {
+                            background: $secondaryDark;
+                            color: $primary;
+                        }
+                    }
+                    > li {
+                        > ul {
+                            background: $secondaryLight;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.--primary {
+        // main itens
+        > ul {
+            > li {
+                > a {
+                    color: $primary;
+                    &:hover {
+                        &:after {
+                            background: $primary;
+                        }
+                    }
+                    &.js-smartMenu__toggle {
+                        position: relative;
+                        &:before {
+                            background: url(#{$media_icons}icon_caret_down.svg);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: contain;
+                        }
+                    }
+                }
+            }
+        }
+        // sub itens
+        > ul {
+            > li {
+                ul {
+                    @include scroll($bg: $primary, $bar: $secondary, $size: 6px);
+                    background: $primary;
+                    a {
+                        color: $white;
+                        font-weight: $fwRegular;
+                        &.js-smartMenu__toggle {
+                            &:before {
+                                background: url(#{$media_icons}icon_caret_down_white.svg);
+                                background-repeat: no-repeat;
+                                background-position: center;
+                                background-size: contain;
+                            }
+                        }
+                        &:hover {
+                            background: $primaryDark;
+                        }
+                    }
+                    > li {
+                        > ul {
+                            background: $primaryLight;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.--gray {
+        // main itens
+        > ul {
+            > li {
+                > a {
+                    color: $text;
+                    &:hover {
+                        &:after {
+                            background: $primary;
+                        }
+                    }
+                    &.js-smartMenu__toggle {
+                        position: relative;
+                        &:before {
+                            background: url(#{$media_icons}icon_caret_down.svg);
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: contain;
+                        }
+                    }
+                }
+            }
+        }
+        // sub itens
+        > ul {
+            > li {
+                ul {
+                    @include scroll($bg: $white3, $bar: $gray, $size: 6px);
+                    background: $white2;
+                    a {
+                        color: $text;
+                        font-weight: $fwRegular;
+                        &.js-smartMenu__toggle {
+                            &:before {
+                                background: url(#{$media_icons}icon_caret_down.svg);
+                                background-repeat: no-repeat;
+                                background-position: center;
+                                background-size: contain;
+                            }
+                        }
+                        &:hover {
+                            background: $gray;
+                        }
+                    }
+                    > li {
+                        > ul {
+                            background: $white3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // theme - force caret color
+    &.--forceMainCaretWhite {
+        // main itens
+        > ul {
+            > li {
+                > a {
+                    &.js-smartMenu__toggle {
+                        &:before {
+                            background: url(#{$media_icons}icon_caret_down_white.svg) !important;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: contain;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.--forceMainCaretDark {
+        // main itens
+        > ul {
+            > li {
+                > a {
+                    &.js-smartMenu__toggle {
+                        &:before {
+                            background: url(#{$media_icons}icon_caret_down.svg) !important;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: contain;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.--forceAllCaretsWhite {
+        @extend .--forceMainCaretWhite;
+        // all sub itens
+        > ul {
+            > li {
+                ul {
+                    a {
+                        &.js-smartMenu__toggle {
+                            &:before {
+                                background: url(#{$media_icons}icon_caret_down_white.svg) !important;
+                                background-repeat: no-repeat;
+                                background-position: center;
+                                background-size: contain;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.--forceAllCaretsDark {
+        @extend .--forceAllCaretsDark;
+        // all sub itens
+        > ul {
+            > li {
+                ul {
+                    a {
+                        &.js-smartMenu__toggle {
+                            &:before {
+                                background: url(#{$media_icons}icon_caret_down.svg) !important;
+                                background-repeat: no-repeat;
+                                background-position: center;
+                                background-size: contain;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // theme - force main link color
+    &.--forceMainLinkColorWhite {
+        // main itens
+        > ul {
+            > li {
+                > a {
+                    color: $white;
+                }
+            }
+        }
+    }
+    &.--forceMainLinkColorGray {
+        // main itens
+        > ul {
+            > li {
+                > a {
+                    color: $text;
+                }
+            }
+        }
+    }
+    &.--forceMainLinkColorPrimary {
+        // main itens
+        > ul {
+            > li {
+                > a {
+                    color: $primary;
+                }
+            }
+        }
+    }
+    &.--forceMainLinkColorSecondary {
+        // main itens
+        > ul {
+            > li {
+                > a {
+                    color: $secondary;
+                }
+            }
+        }
+    }
+
+    // layout - vertical
+    &.--vertical {
+        > ul {
+            display: block;
+            > li {
+                margin-right: 0;
+                > ul {
+                    @include translate(0,0,center);
+                    @include roundedAll();
+                    width: 100%;
+                    position: relative;
+                    left: 0;
+                    max-height: inherit;
+                }
+            }
+        }
+    }
+}

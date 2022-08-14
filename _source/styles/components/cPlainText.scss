@@ -1,0 +1,154 @@
+.c-plainText {
+	> * {
+		margin-bottom: 20px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	figure {
+		display: block;
+		overflow: hidden;
+		width: 100%;
+		a {
+			@include roundedAll();
+			overflow: hidden;
+			display: block;
+		}
+		img {
+			@include roundedAll();
+			display: block;
+			width: 100%;
+		}
+	}
+	figcaption {
+		display: block;
+		text-align: center;
+		padding: 10px;
+		color: $textLight;
+		font-size: 14px;
+	}
+	p {
+		@include paragraphs($fw: $fwLight, $fs: 18px);
+	}
+
+	ol:not(.c-menu__social),
+	ul:not(.c-menu__social) {
+		li {
+			display: list-item;
+			list-style-position: inside;
+			color: $text;
+			@include mbElement(5px);
+			> * {
+				display: inline;
+			}
+		}
+	}
+	ol:not(.c-menu__social) {
+		li {
+			list-style-type: decimal-leading-zero;
+		}
+	}
+	ul:not(.c-menu__social) {
+		li {
+			list-style-type: disc;
+		}
+	}
+
+	blockquote {
+		@include roundedAll();
+		background: $gray;
+		padding: 20px 25px;
+		display: block;
+		> * {
+			margin-bottom: 20px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		&:hover {
+			border-color: transparent;
+		}
+	}
+	h1 {
+		color: $textDark;
+		font-size: 50px;
+		font-weight: $fwBold;
+	}
+	h2 {
+		color: $textDark;
+		font-size: 40px;
+		font-weight: $fwBold;
+	}
+	h3 {
+		color: $textDark;
+		font-size: 36px;
+		font-weight: $fwBold;
+	}
+	h4 {
+		color: $textDark;
+		font-size: 32px;
+		font-weight: $fwBold;
+	}
+	h5 {
+		color: $textDark;
+		font-size: 28px;
+		font-weight: $fwBold;
+	}
+	h6 {
+		color: $textDark;
+		font-size: 24px;
+		font-weight: $fwBold;
+	}
+
+	video, iframe, embed {
+		@include roundedAll();
+		overflow: hidden;
+		display: block;
+		width: 100%;
+	}
+
+	&.--article {
+		p {
+			font-size: 18px;
+			color: $textLight;
+		}
+	}
+}
+
+@media screen and (max-width: 780px) {
+	.c-plainText {
+		h1 {
+			font-size: 40px;
+		}
+		h2 {
+			font-size: 36px;
+		}
+		h3 {
+			font-size: 32px;
+		}
+		h4 {
+			font-size: 28px;
+		}
+		h5 {
+			font-size: 24px;
+		}
+		h6 {
+			font-size: 20px;
+		}
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.c-plainText {
+		&.--withPaddings {
+			> * {
+				padding-left: 0;
+				padding-right: 0;
+			}
+			> blockquote {
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+		}
+	}
+}

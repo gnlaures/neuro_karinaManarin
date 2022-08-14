@@ -1,0 +1,32 @@
+<?php
+$lHeader = array('modifiers' => '--inner', 'title' => 'Privacidade');
+include('parts/layout/l-header.php');
+?>
+
+<main class="l-page__main --inner">
+    <div class="l-page__main__group --withSidebar">
+        <div class="u-container u-dflex u-aifs">
+            <div class="l-page__main__content">
+                <section class="s-defaultSection --institucional">
+                    <article class="c-plainText">
+                        <h3>Lorem Ipsum Sit Dollor</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam distinctio dolor dolorem ea earum est exercitationem explicabo impedit laudantium necessitatibus obcaecati quaerat quod, sint, totam, ut voluptatum? A ad consequuntur, cumque dolore doloremque dolorum ducimus enim esse ex facere facilis id illum iure, iusto laudantium magnam nemo nesciunt nobis odit perferendis placeat possimus quam quasi recusandae, rem repellat reprehenderit rerum sit tempora temporibus veniam voluptas voluptates voluptatibus? Accusamus assumenda blanditiis, cupiditate distinctio fuga obcaecati ratione tempora voluptatem voluptatum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam distinctio dolor dolorem ea earum est exercitationem explicabo impedit laudantium necessitatibus obcaecati quaerat quod, sint, totam, ut voluptatum? A ad consequuntur, cumque dolore doloremque dolorum ducimus enim esse ex facere facilis id illum iure, iusto laudantium magnam nemo nesciunt nobis odit perferendis placeat possimus quam quasi recusandae, rem repellat reprehenderit rerum sit tempora temporibus veniam voluptas voluptates voluptatibus? Accusamus assumenda blanditiis, cupiditate distinctio fuga obcaecati ratione tempora voluptatem voluptatum.</p>
+                        <h4>Lorem Ipsum Sit Dollor</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam distinctio dolor dolorem ea earum est exercitationem explicabo impedit laudantium necessitatibus obcaecati quaerat quod, sint, totam, ut voluptatum? A ad consequuntur, cumque dolore doloremque dolorum ducimus enim esse ex facere facilis id illum iure, iusto laudantium magnam nemo nesciunt nobis odit perferendis placeat possimus quam quasi recusandae, rem repellat reprehenderit rerum sit tempora temporibus veniam voluptas voluptates voluptatibus? Accusamus assumenda blanditiis, cupiditate distinctio fuga obcaecati ratione tempora voluptatem voluptatum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam distinctio dolor dolorem ea earum est exercitationem explicabo impedit laudantium necessitatibus obcaecati quaerat quod, sint, totam, ut voluptatum? A ad consequuntur, cumque dolore doloremque dolorum ducimus enim esse ex facere facilis id illum iure, iusto laudantium magnam nemo nesciunt nobis odit perferendis placeat possimus quam quasi recusandae, rem repellat reprehenderit rerum sit tempora temporibus veniam voluptas voluptates voluptatibus? Accusamus assumenda blanditiis, cupiditate distinctio fuga obcaecati ratione tempora voluptatem voluptatum.</p>
+                        <h5>Lorem Ipsum Sit Dollor</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam distinctio dolor dolorem ea earum est exercitationem explicabo impedit laudantium necessitatibus obcaecati quaerat quod, sint, totam, ut voluptatum? A ad consequuntur, cumque dolore doloremque dolorum ducimus enim esse ex facere facilis id illum iure, iusto laudantium magnam nemo nesciunt nobis odit perferendis placeat possimus quam quasi recusandae, rem repellat reprehenderit rerum sit tempora temporibus veniam voluptas voluptates voluptatibus? Accusamus assumenda blanditiis, cupiditate distinctio fuga obcaecati ratione tempora voluptatem voluptatum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam distinctio dolor dolorem ea earum est exercitationem explicabo impedit laudantium necessitatibus obcaecati quaerat quod, sint, totam, ut voluptatum? A ad consequuntur, cumque dolore doloremque dolorum ducimus enim esse ex facere facilis id illum iure, iusto laudantium magnam nemo nesciunt nobis odit perferendis placeat possimus quam quasi recusandae, rem repellat reprehenderit rerum sit tempora temporibus veniam voluptas voluptates voluptatibus? Accusamus assumenda blanditiis, cupiditate distinctio fuga obcaecati ratione tempora voluptatem voluptatum.</p>
+                        <h6>Lorem Ipsum Sit Dollor</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam distinctio dolor dolorem ea earum est exercitationem explicabo impedit laudantium necessitatibus obcaecati quaerat quod, sint, totam, ut voluptatum? A ad consequuntur, cumque dolore doloremque dolorum ducimus enim esse ex facere facilis id illum iure, iusto laudantium magnam nemo nesciunt nobis odit perferendis placeat possimus quam quasi recusandae, rem repellat reprehenderit rerum sit tempora temporibus veniam voluptas voluptates voluptatibus? Accusamus assumenda blanditiis, cupiditate distinctio fuga obcaecati ratione tempora voluptatem voluptatum.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam distinctio dolor dolorem ea earum est exercitationem explicabo impedit laudantium necessitatibus obcaecati quaerat quod, sint, totam, ut voluptatum? A ad consequuntur, cumque dolore doloremque dolorum ducimus enim esse ex facere facilis id illum iure, iusto laudantium magnam nemo nesciunt nobis odit perferendis placeat possimus quam quasi recusandae, rem repellat reprehenderit rerum sit tempora temporibus veniam voluptas voluptates voluptatibus? Accusamus assumenda blanditiis, cupiditate distinctio fuga obcaecati ratione tempora voluptatem voluptatum.</p>
+                    </article>
+                </section>
+            </div>
+            <div class="l-page__main__aside">
+                <?php include('parts/layout/l-sidebar.php'); ?>
+            </div>
+        </div>
+    </div>
+</main>

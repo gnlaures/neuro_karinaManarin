@@ -1,0 +1,96 @@
+.l-page {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 156px;
+    &__main {
+        margin-top: -310px;
+        &__group {
+            padding-top: 0;
+            &:last-of-type {
+                padding-bottom: 60px;
+            }
+            &.--withSidebar {
+                .l-page__main__content {
+                    flex: 1 1 auto;
+                    padding-right: 20px;
+                }
+                .l-page__main__aside {
+                    @include flexWidth(420px);
+                }
+            }
+        }
+
+        &.--inner {
+            margin-top: 0;
+            .l-page__main__group {
+                padding-top: 40px;
+                .l-page__main__content {
+                    padding-top: 10px;
+                }
+            }
+        }
+    }
+
+    &.p-home {
+        .l-page__main {
+            &__group {
+                padding: 40px 0;
+                border-top: 10px solid $white3;
+                &:first-of-type {
+                    padding-top: 0;
+                    border-top: 0;
+                }
+                &:last-of-type {
+                    padding-bottom: 60px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1240px) {
+    .l-page__main__group.--withSidebar .l-page__main__aside {
+        @include flexWidth(330px);
+    }
+}
+@media screen and (max-width: 1080px) {
+    .l-page__main {
+        margin-top: -160px;
+    }
+}
+@media screen and (max-width: 940px) {
+    .l-page__main__group.--withSidebar {
+        .u-container {
+            flex-wrap: wrap;
+        }
+        .l-page__main__content {
+            @include flexWidth(100%);
+            padding-right: 0;
+        }
+        .l-page__main__aside {
+            @include flexWidth(100%);
+            margin-top: 60px;
+        }
+    }
+
+    .l-page.p-home {
+        .l-page__main__group.--withSidebar {
+            .u-container {
+                flex-wrap: wrap-reverse;
+            }
+            .l-page__main__content {
+                margin-top: 40px;
+            }
+            .l-page__main__aside {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+// l-nav height l-page padding top fix
+@media screen and (max-width: 740px) {
+    .l-page {
+        padding-top: 121px;
+    }
+}

@@ -1,0 +1,86 @@
+@mixin cSearchText($tc: $textDark) {
+	font-size: 14px;
+	font-weight: $fwRegular;
+	color: $tc;
+	@include placeholder {
+		font-size: 14px;
+		font-weight: $fwLight;
+		color: $textLight;
+	}
+}
+
+.c-search {
+	display: block;
+	position: relative;
+	width: 100%;
+
+	&__hero {
+		display: block;
+		position: relative;
+		width: 100%;
+		input {
+			@include roundedAll(20px);
+			@include transition();
+			@include cSearchText();
+			appearance: textfield;
+			display: block;
+			width: 100%;
+			height: 40px;
+			line-height: 40px;
+			padding: 0 50px 0 20px;
+			background: $white2;
+			&:focus {
+				background: $gray;
+			}
+		}
+		button {
+			@include roundedAll(20px);
+			@include transition();
+			position: absolute;
+			top: 0;
+			right: 0;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			height: 40px;
+			width: 48px;
+			background: transparent;
+			cursor: pointer;
+			svg {
+				@include transition();
+				display: block;
+				height: 18px;
+				width: 18px;
+				* {
+					@include transition();
+				}
+			}
+			&:hover {
+				background: $primary;
+				svg {
+					path {
+						stroke: $white;
+					}
+				}
+			}
+		}
+	}
+
+	// mods
+	&.--min {
+		.c-search__hero {
+			width: 145px;
+		}
+		&.is-active {
+			.c-search__hero {
+				input {
+					width: 200%;
+				}
+				button {
+					right: -100%;
+				}
+			}
+		}
+	}
+}

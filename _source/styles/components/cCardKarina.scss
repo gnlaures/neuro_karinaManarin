@@ -1,0 +1,45 @@
+.c-cardKarina {
+	@include roundedAll();
+	@include preset__cardBoxShadow;
+	display: block;
+	width: 100%;
+	padding-bottom: 25px;
+	background: $white;
+	&__about {
+		display: block;
+		padding: 25px;
+		figure {
+			@include roundedAll(50%);
+			display: block;
+			width: 75px;
+			height: 75px;
+			overflow: hidden;
+			position: relative;
+			margin: 0 auto 15px auto;
+			img {
+				display: block;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				object-fit: cover;
+			}
+		}
+		p {
+			@include paragraphs();
+			text-align: center;
+		}
+
+		&:hover {
+			p {
+				color: $primary;
+			}
+		}
+	}
+	&__social {
+		.c-menu__social {
+			justify-content: center !important;
+		}
+	}
+}

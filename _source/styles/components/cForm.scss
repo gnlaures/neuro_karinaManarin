@@ -1,0 +1,153 @@
+.c-form {
+    &__hero {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    &__hero {
+        @include calcWidthForPositionNegative(-10px);
+    }
+    &__group {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    &__field {
+        display: block;
+        width: 100%;
+        padding: 10px;
+    }
+    &__feedback {
+        display: block;
+    }
+}
+
+.c-field {
+    > label {
+        display: block;
+        width: 100%;
+        color: $text;
+        font-weight: $fwBold;
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+
+    > input,
+    > .c-field__file input,
+    > select,
+    > textarea {
+        @include transition();
+        @include roundedAll(20px);
+        display: block;
+        width: 100%;
+        border: 2px solid $primary;
+        background: transparent;
+        font-weight: $fwRegular;
+        font-size: 16px;
+        color: $text;
+        @include placeholder() {
+            color: $placeholderText;
+        }
+        &:focus {
+            border-color: $primaryDark;
+        }
+    }
+
+    > input,
+    > .c-field__file input,
+    > select {
+        line-height: 38px;
+        height: 40px;
+        padding: 0 20px;
+    }
+
+    > textarea {
+        line-height: 1.25;
+        height: 180px;
+        min-height: 100px;
+        max-height: 70vh;
+        padding: 15px 20px;
+        resize: vertical;
+    }
+
+    &.--btn {
+        display: flex;
+        justify-content: flex-end;
+        .c-btn {
+            max-width: 170px;
+            border-width: 2px;
+        }
+    }
+    &.--confirmRead {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10px 0;
+        input {
+            @include roundedAll(4px);
+            padding: 0;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            &:checked {
+                background: url(#{$media_icons}/icon_checked.svg) !important;
+                background-repeat: no-repeat !important;
+                background-size: cover !important;
+                background-position: center !important;
+            }
+        }
+        label {
+            @include paragraphs($fs: 16px);
+            font-weight: $fwSemiBold;
+            text-transform: inherit;
+            padding-left: 10px;
+            margin-bottom: 0;
+            a {
+                //color: $text;
+                font-weight: $fwSemiBold;
+                //text-decoration: underline;
+                &:hover {
+                    text-decoration: underline;
+                    //color: $secondary;
+                }
+            }
+        }
+    }
+    &.--file {
+        .c-field__file {
+            display: block;
+            width: 100%;
+            position: relative;
+            input[type=file] {
+                @include opacity(0);
+                position: relative;
+                z-index: 2;
+                cursor: pointer;
+            }
+            input[type=text] {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                pointer-events: none;
+            }
+            svg {
+                display: block;
+                width: 22px;
+                height: 22px;
+                position: absolute;
+                top: 50%;
+                margin-top: -11px;
+                right: 15px;
+                z-index: 1;
+                pointer-events: none;
+            }
+        }
+    }
+}

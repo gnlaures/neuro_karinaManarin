@@ -1,0 +1,61 @@
+:root {
+    /* project colors */
+    --primaryLight: #21B26C;
+    --primary: #149255;
+    --primaryDark: #087842;
+    --secondaryLight: #2D3539;
+    --secondary: #1C2123;
+    --secondaryDark: #101516;
+
+    /* more colors */
+    --white: #fff;
+    --white2: #F1F1F1;
+    --white3: #E0E0E0;
+    --gray: #D7D7D7;
+    --gray2: #b9b9be;
+    --gray3: #848484;
+    --gray4: #5f5f5f;
+    --black: #000000;
+    --black2: #191919;
+    --black3: #2d2d2d;
+    --neurodigital: #f60;
+
+    /* text colors */
+    --text: #807A7A;
+    --textDark: #4E4E4E;
+    --textLight: #807A7A;
+    --placeholderText: #807A7A;
+
+    /* form colors */
+    --feedbackSuccess: var(--primary);
+    --feedbackLoad: var(--textLight);
+    --feedbackError: #ab2e45;
+
+    /* social colors */
+    --wppPrimary: #03BF56;
+    --wppSecondary: #02AB4D;
+    --twitterPrimary: #0F9DFF;
+    --twitterSecondary: #047fd4;
+    --facebookPrimary: #3764B9;
+    --facebookSecondary: #28519e;
+    --instagramPrimary: #FF3A55;
+    --instagramSecondary: #d11f38;
+    --linkedinPrimary: #2864B4;
+    --linkedinSecondary: #194c91;
+    --spotifyPrimary: #1ED764;
+    --spotifySecondary: #11ad4c;
+    --youtubePrimary: #C4302B;
+    --youtubeSecondary: #9c1d19;
+
+    /* sizes */
+    --containerPadding: 20px;
+    --containerWidth: 1340px;
+    --containerBigWidth: 1440px;
+    --maxRowWidth: 1700px;
+    --defaultRadius: 10px;
+    --sectionContentGAP: 30px;
+    --sectionsGAP: 50px;
+
+    /* fonts */
+    --fontFamily__default: 'Lexend', sans-serif;
+}

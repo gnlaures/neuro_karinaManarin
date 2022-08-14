@@ -1,0 +1,129 @@
+.c-menu__social {
+	display: block;
+	width: 100%;
+	li {
+		margin-bottom: 10px;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		a {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-start;
+		}
+		span {
+			@include transition();
+			@include paragraphs();
+			padding: 0 10px 0 5px;
+		}
+		i {
+			@include flexWidth(20px);
+			svg {
+				@include transition();
+				display: block;
+				width: 20px;
+				height: 20px;
+				* {
+					@include transition();
+				}
+			}
+		}
+	}
+
+	// themes
+	&.--gray {
+		a {
+			span {
+				color: $text;
+			}
+			i svg path {
+				fill: $text;
+			}
+			&:hover {
+				span {
+					color: $primary;
+				}
+				i svg path {
+					fill: $primary;
+				}
+			}
+		}
+	}
+	&.--white {
+		a {
+			span {
+				color: $white;
+			}
+			i svg path {
+				fill: $white;
+			}
+			&:hover {
+				span {
+					color: $primary;
+				}
+				i svg path {
+					fill: $primary;
+				}
+			}
+		}
+	}
+	&.--primary {
+		a {
+			span {
+				color: $primary;
+			}
+			i svg path {
+				fill: $primary;
+			}
+			&:hover {
+				span {
+					color: $primaryDark;
+				}
+				i svg path {
+					fill: $primaryDark;
+				}
+			}
+		}
+	}
+	&.--secondary {
+		a {
+			span {
+				color: $secondary;
+			}
+			i svg path {
+				fill: $secondary;
+			}
+			&:hover {
+				span {
+					color: $secondaryDark;
+				}
+				i svg path {
+					fill: $secondaryDark;
+				}
+			}
+		}
+	}
+
+	// mods
+	&.--h {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+		li {
+			margin-right: 10px;
+			margin-bottom: 0;
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+	}
+	&.--noLabels {
+		li {
+			a span {
+				display: none;
+			}
+		}
+	}
+}

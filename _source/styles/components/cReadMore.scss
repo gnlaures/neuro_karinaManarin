@@ -1,0 +1,47 @@
+.c-readMore {
+	a {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+		span {
+			@include transition();
+			@include paragraphs($fw: $fwMedium, $tc: $primary, $fs: 14px);
+			display: block;
+			padding-right: 5px;
+		}
+		i {
+			@include transition();
+			@include rotate(180deg, center);
+			@include roundedAll(50%);
+			@include flexHeight(24px);
+			@include flexWidth(24px);
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			background: $primary;
+			position: relative;
+			left: 0;
+			svg {
+				@include transition();
+				display: block;
+				width: 18px;
+				height: 18px;
+				path {
+					stroke: $white;
+				}
+			}
+		}
+
+		&:hover {
+			span {
+				color: $primaryDark;
+			}
+			i {
+				background: $primaryDark;
+				left: 4px;
+			}
+		}
+	}
+}

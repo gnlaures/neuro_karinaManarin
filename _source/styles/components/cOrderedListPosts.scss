@@ -1,0 +1,58 @@
+.c-orderedListPosts {
+	li {
+		margin-bottom: 12px;
+		padding-bottom: 10px;
+		border-bottom: 1px solid $white2;
+		a {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: flex-start;
+			i {
+				@include roundedAll(20px);
+				@include flexWidth(40px);
+				height: 40px;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				color: $white;
+				font-weight: $fwSemiBold;
+				font-size: 18px;
+				background: $primaryLight;
+				font-style: normal;
+			}
+			p {
+				@include paragraphs($fw: $fwSemiBold);
+				padding-left: 10px;
+			}
+
+			&:hover {
+				p {
+					color: $primary;
+				}
+			}
+		}
+
+		&:last-of-type {
+			margin-bottom: 0;
+			padding-bottom: 0;
+			border-bottom: 0;
+		}
+		&:nth-of-type(1) {
+			a i {
+				background: $primaryDark;
+			}
+		}
+		&:nth-of-type(2) {
+			a i {
+				background: $primary;
+			}
+		}
+	}
+}
+@media screen and (max-width: 1240px) {
+	.c-orderedListPosts li a p {
+		font-size: 16px;
+	}
+}

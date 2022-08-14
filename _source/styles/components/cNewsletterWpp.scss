@@ -1,0 +1,74 @@
+.c-newsletterWpp {
+	display: block;
+	width: 100%;
+	max-width: 860px;
+	margin: 0 auto;
+	padding: 60px 0;
+	&__icons {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		i {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			width: 37px;
+			height: 30px;
+			svg {
+				display: block;
+				min-width: 30px;
+				height: 30px;
+				path {
+					fill: $primary;
+				}
+			}
+		}
+		span {
+			display: block;
+			padding: 0 25px;
+			text-align: center;
+			font-weight: $fwSemiBold;
+			color: $primary;
+			font-size: 24px;
+		}
+	}
+	&__title {
+		display: block;
+		width: 100%;
+		padding: 10px 0;
+		h3 {
+			display: block;
+			margin: 0 auto;
+			max-width: 400px;
+			text-align: center;
+			font-weight: $fwSemiBold;
+			color: $white;
+			font-size: 24px;
+		}
+	}
+	&__form {
+		display: block;
+		width: 100%;
+		.c-field {
+			input {
+				color: $white;
+				@include placeholder {
+					color: $white2;
+				}
+			}
+			&.--confirmRead label {
+				color: $white;
+			}
+		}
+	}
+}
+@media screen and (max-width: 780px) {
+	.c-newsletterWpp {
+		max-width: 440px;
+		.c-form__field {
+			@include flexWidth(100%);
+		}
+	}
+}

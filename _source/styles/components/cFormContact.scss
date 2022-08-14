@@ -1,0 +1,19 @@
+@media screen and (max-width: 980px) {
+	.c-contactForm {
+		.c-form__group,
+		.c-form__field {
+			@include flexWidth(100%);
+		}
+
+		.c-form__group.--last {
+			order: 2;
+		}
+	}
+}
+@media screen and (max-width: 520px) {
+	.c-contactForm {
+		.c-form__field {
+			@include flexWidth(100%);
+		}
+	}
+}

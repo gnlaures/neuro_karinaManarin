@@ -1,0 +1,73 @@
+.c-shareOptions {
+	@include roundedAll();
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	border: 1px solid $gray;
+	overflow: hidden;
+	li {
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		//padding: 25px 0;
+		border-right: 1px solid $gray;
+		position: relative;
+		a {
+			@include transition();
+			background: transparent;
+			padding: 25px 0;
+			width: 100%;
+			svg {
+				display: block;
+				height: 25px;
+				width: 30px;
+				margin: 0 auto;
+			}
+			&:hover {
+				background: $white;
+				svg path {
+					fill: $primary;
+				}
+			}
+		}
+	}
+}
+
+.js-shareOptions__input {
+	display: none;
+}
+.js-shareOptions__feedback {
+	@include roundedAll();
+	display: none;
+	padding: 4px 10px;
+	background: $primary;
+	color: $white;
+	white-space: nowrap;
+	width: 100px;
+	text-align: center;
+	font-size: 12px;
+	position: absolute;
+	top: 0;
+	right: -1px;
+	&.is-active {
+		display: block;
+	}
+}
+
+
+
+@media screen and (max-width: 480px) {
+	.c-shareOptions {
+		li {
+			a {
+				padding: 20px 0;
+				svg {
+					height: 20px;
+					width: 24px;
+				}
+			}
+		}
+	}
+}

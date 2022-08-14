@@ -1,0 +1,30 @@
+// loader
+@include keyframes(loader) {
+	from {@include transforms(rotate(0deg), center)}
+	to {@include transforms(rotate(360deg), center)}
+}
+@mixin animation__loader() {
+	animation-name: loader;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	animation-timing-function: ease;
+	animation-play-state: running;
+	//animation-fill-mode: forwards;
+	//animation-delay: 2s;
+}
+
+@include keyframes(opacityToggle) {
+	from {@include opacity(0)}
+	to {@include opacity(1)}
+}
+@mixin animation__opacityToggle() {
+	animation-name: opacityToggle;
+	animation-duration: 500ms;
+	// animation-iteration-count: inherit;
+	animation-direction: normal;
+	animation-timing-function: ease;
+	// animation-play-state: inherit;
+	//animation-fill-mode: forwards;
+	//animation-delay: 2s;
+}

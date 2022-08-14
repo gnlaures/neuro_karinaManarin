@@ -1,0 +1,45 @@
+.c-pagination {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 30px;
+	padding-top: 25px;
+	border-top: 1px solid $gray;
+	> li {
+		padding: 0 10px;
+		&:first-of-type {
+			margin-right: 20px;
+		}
+		&:last-of-type {
+			margin-left: 20px;
+		}
+	}
+
+	&__item {
+		@include labels();
+		font-size: 16px;
+		color: $primary;
+		display: block;
+		height: 36px;
+		line-height: 36px;
+		&.--num {
+			@include transition();
+			@include roundedAll(50px);
+			width: 36px;
+			text-align: center;
+			color: $primary;
+			&:hover {
+				background: $white2;
+			}
+			&.is-active {
+				background: $primary;
+				color: $white;
+			}
+		}
+		&.is-disabled {
+			@include opacity(0.5);
+			cursor: not-allowed;
+			color: $textLight;
+		}
+	}
+}

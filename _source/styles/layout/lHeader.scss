@@ -1,0 +1,35 @@
+.l-header {
+	background: $primary;
+	border-bottom: 10px solid $primaryLight;
+	padding-top: 10px;
+	padding-bottom: 300px;
+	&__title {
+		padding-top: 10px;
+		padding-bottom: 25px;
+		h1 {
+			font-size: 50px;
+			color: $white;
+			font-weight: $fwSemiBold;
+		}
+	}
+
+	&.--noTitle {
+		.l-header__title {
+			display: none;
+		}
+	}
+
+	&.--inner {
+		padding-bottom: 0;
+	}
+}
+@media screen and (max-width: 1080px) {
+	.l-header {
+		padding-bottom: 150px;
+	}
+}
+@media screen and (max-width: 780px) {
+	.l-header__title h1 {
+		font-size: 32px;
+	}
+}
